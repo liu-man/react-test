@@ -1,0 +1,85 @@
+@import '@/lib/reset.scss';
+* { touch-action: pan-y; } 
+ html, body, #root, .container {
+   @include rect(100%, 100%);
+ }
+.container {
+  @include flexbox();
+  @include flex-direction(column);
+
+.box {
+  @include flex();
+  @include rect(100%, auto);
+  @include flexbox();
+  @include flex-direction(column);
+  @include overflow();
+  .header {
+    @include rect(100%, .6rem);
+    // @include background-color(#4f8cff);
+    // background:linear-gradient(90deg,#0af,#0085ff);
+    .searchbox{
+      margin: .1rem 0 0 .1rem;
+      .searchl {
+        border: 1px solid #ccc;
+        background-color: (#eee);
+        @include rect(3rem, .4rem);
+        line-height: .4rem;
+        float: left;
+        .search {
+          margin-left:.1rem;
+          float: left;
+        }
+        .write {
+          margin-left: .1rem;
+          float: left;
+        }
+        .reset {
+          margin-right:.1rem;
+          float:right;
+        }
+
+      }
+      .ring {
+        float: right;
+        margin-right: .1rem;
+        line-height: .4rem;
+        font-size: .25rem;
+      }
+    }
+  }
+  .content {
+    @include flex();
+    @include rect(100%, auto);
+    // .slider-decorator-0 {
+    //   height:30px;
+    //   .am-carousel-wrap {
+    //     height:20px;
+    //     .am-carousel-wrap-dot{
+    //       height:20;
+    //     }
+    //   }
+    // }
+  }
+}
+  .footer {
+    @include rect(100%, .5rem);
+    @include background-color(#fff);
+    border-top: 1px solid #ccc;
+    ul {
+      @include flexbox();
+      @include rect(100%, 100%);
+      a {
+        @include flex();
+        @include flexbox();
+        @include rect(auto, 100%);
+        @include flex-direction(column);
+        @include justify-content();
+        @include align-items();
+        @include text-color(#333);
+        &.active {
+          @include text-color(#4f8cff);
+        }
+      }
+    }
+  }
+}
